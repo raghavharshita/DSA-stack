@@ -1,3 +1,4 @@
+//ques for LRU cache -https://leetcode.com/problems/lru-cache/
 #include<bits/stdc++.h>
 using namespace std;
 
