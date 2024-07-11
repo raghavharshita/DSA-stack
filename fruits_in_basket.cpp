@@ -43,3 +43,30 @@ class Solution {
         return maxi;
     }
 };
+
+// striver's approach
+class Solution {
+  public:
+    int totalFruits(int N, vector<int> &fruits) {
+        int left=0,right=0;
+        int maxi=0;
+        map<int,int>mpp;
+        while(right<N){
+            mpp[fruits[right]]++;
+            if(mpp.size()<=2){
+                maxi=max(maxi,right-left+1);
+            }
+            else{
+                if(mpp[fruits[left]]>1){
+                    mpp[fruits[left]]--;
+                }
+                else{
+                    mpp.erase(fruits[left]);
+                }
+                left++;
+            }
+            right++;
+        }
+        return maxi;
+    }
+};
